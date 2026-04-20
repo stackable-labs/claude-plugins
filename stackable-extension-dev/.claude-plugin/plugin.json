@@ -1,0 +1,25 @@
+{
+  "name": "stackable-extension-dev",
+  "version": "0.0.0",
+  "description": "Stackable Labs Extension SDK — skills, validation, and live platform tools for AI-assisted extension development for enhanced Zendesk Messenger",
+  "author": {
+    "name": "Stackable Labs",
+    "email": "team@stackablelabs.io"
+  },
+  "homepage": "https://docs.stackablelabs.io",
+  "repository": "https://github.com/stackable-labs/claude-plugins",
+  "license": "MIT",
+  "keywords": [
+    "stackable",
+    "extension development",
+    "sdk",
+    "mcp",
+    "zendesk messenger"
+  ],
+  "mcpServers": {
+    "stackable-extension-http": {
+      "type": "http",
+      "url": "https://api-use1.stackablelabs.io/mcp/app-extension"
+    }
+  }
+}
