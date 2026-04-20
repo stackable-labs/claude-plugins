@@ -11,7 +11,7 @@
     {
       "name": "stackable-extension-dev",
       "description": "SDK skills, validation tools, and live platform API access for extension development for enhanced Zendesk Messenger",
-      "version": "0.0.0",
+      "version": "1.0.2",
       "source": "./stackable-extension-dev"
     }
   ]
