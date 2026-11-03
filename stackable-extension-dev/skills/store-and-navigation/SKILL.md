@@ -89,7 +89,7 @@ export const Header = () => {
             Back
           </ui.Button>
         )}
-        <ui.Heading level={3}>
+        <ui.Heading level="3">
           {viewState.type === 'list' ? 'All Items' : 'Item Detail'}
         </ui.Heading>
       </ui.Inline>

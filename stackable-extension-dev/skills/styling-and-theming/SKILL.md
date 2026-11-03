@@ -55,7 +55,7 @@ Use the built-in layout components instead of raw CSS:
 
 ```tsx
 <ui.Stack className="gap-4">
-  <ui.Heading level={3}>Section Title</ui.Heading>
+  <ui.Heading level="3">Section Title</ui.Heading>
   <ui.Text>Section content</ui.Text>
   <ui.Separator />
   <ui.Inline className="gap-2">

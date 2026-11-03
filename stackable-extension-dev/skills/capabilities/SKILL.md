@@ -382,12 +382,12 @@ Four kinds:
 
 | kind | Required fields | Optional |
 |---|---|---|
-| `'text'` | `body: string` | `actions?: MessageItemAction[]`, `metadata?`, `htmlText?`, `markdownText?`, `disableUserInput?` |
-| `'image'` | `url: string`, `altText: string` | `body?`, `actions?`, `metadata?` |
-| `'file'` | `url: string`, `altText: string` | `body?`, `metadata?` (no `actions` — file kind doesn't accept item-level actions) |
-| `'carousel'` | `items: [MessageItem, ...MessageItem[]]` (1–10 items, each with `title`, `description?`, `imageUrl?`, `actions?`) | `displaySettings?: { imageAspectRatio?: 'square' \| 'horizontal' }` |
+| `'text'` | `body: string` | `bodyFormat?: 'text' \| 'markdown' \| 'html'`, `actions?: MessageAction[]`, `metadata?`, `disableUserInput?` |
+| `'image'` | `url: string` | `altText?` (defaults to the filename), `body?`, `bodyFormat?`, `actions?: MessageAction[]`, `metadata?`, `disableUserInput?` |
+| `'file'` | `url: string` | `altText?` (defaults to the filename), `body?`, `bodyFormat?`, `metadata?`, `disableUserInput?` (no `actions` — Sunco's file message doesn't support them) |
+| `'carousel'` | `items: MessageItem[]` (1–10 items, each with `title`, `description?`, `imageUrl?`, `altText?`, `imageSize?`, `metadata?` and 1–3 `actions: MessageItemAction[]`) | `displaySettings?: { imageAspectRatio?: 'horizontal' \| 'square' }`, `metadata?`, `disableUserInput?` |
 
-**Action types** (per-item or per-message): `reply` (quick-reply button — emits postback to `useMessagingEvent`), `link` (opens URL), `postback` (custom payload to your handler), `locationRequest` (asks user for location).
+**Action types** (`MessageAction`, message-level): `reply` (quick-reply button — inserts a visible user-reply bubble carrying `payload`, as if the user typed it; can't be mixed with other action types), `link` (opens URL), `postback` (no visible bubble; extensions with `events:messaging` receive it via `useMessagingEvent`), `locationRequest` (asks user for location). Carousel items take `MessageItemAction` — `link` and `postback` only.
 
 ### Hook usage
 
